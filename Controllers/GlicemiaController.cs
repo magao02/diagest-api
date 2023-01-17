@@ -1,6 +1,7 @@
 using Api.Models;
 using Api.Services;
 using Api.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.controllers;
@@ -16,12 +17,14 @@ public class GlicemiaController : ControllerBase
   }
 
   [HttpPost("{id}")]
+  [AllowAnonymous]
   public ActionResult<IEnumerable<Glicemia>> GetAll(int id) {
     var glicemias = _GlicemiaService.GetAll(id);
     return(glicemias);
   }
 
   [HttpGet("{id}")]
+  [AllowAnonymous]
   public ActionResult<Glicemia> GetById(int id) {
     var glicemia = _GlicemiaService.GetById(id);
     if (glicemia == null) {
@@ -46,6 +49,7 @@ public class GlicemiaController : ControllerBase
   }
 
   [HttpDelete("{id}")]
+  [Authorize]
   public IActionResult Delete(int id) {
     var glicemia = _GlicemiaService.GetById(id);
     if (glicemia == null) {
