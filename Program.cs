@@ -14,6 +14,14 @@ builder.Services.AddDbContext<Contexto>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("WebApiDatabase"));
 });
+//add cors
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        builder => builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
 
 //AddIdentity
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()

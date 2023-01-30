@@ -35,7 +35,13 @@ public class UserService : IUserService
         return _contexto.User.Find(id);
     }
 
-    public void Update(User user)
+  public User? Login(string email, string senha)
+  {
+    var user = _contexto.User.Where(x => x.email == email && x.password == senha).FirstOrDefault();
+    return user;
+  }
+
+  public void Update(User user)
     {
        throw new NotImplementedException();
     }
