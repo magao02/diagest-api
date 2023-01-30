@@ -31,6 +31,16 @@ public class UserController : ControllerBase
         if (user == null) return NotFound();
         return Ok(user);
     }
+    [HttpPost]
+    [Route("login")]
+    public ActionResult Teste(string email, string senha)
+    {
+        var user = _UserService.Login(email, senha);
+        if (user == null) return NotFound();
+        return Ok(user);
+    }
+    
+
 
     [HttpPost]
     public ActionResult<User> Create(UserViewModel userModel)

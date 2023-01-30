@@ -11,4 +11,5 @@ public interface IUserService
     void Delete(int id);
 
     List<User> GetAll();
+    User? Login(string email, string senha);
 }

@@ -28,7 +28,7 @@ public class GlicemiaService : IGlicemiaService
     public List<Glicemia> GetAll(int id)
     {
         System.FormattableString teste = $"SELECT * FROM glicemia WHERE idusuario = {id}";
-          var listaGlicemias = _contexto.Glicemia.FromSql( teste )
+          var listaGlicemias = _contexto.Glicemia.FromSqlInterpolated( teste )
                         .ToList< Glicemia >();
         return listaGlicemias;
     }
