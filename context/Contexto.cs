@@ -14,7 +14,7 @@ namespace Api.Contextos
 
               protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
               {
-                  optionsBuilder.UseNpgsql("Server=localhost; Port=5432;Database=postgres;User Id=postgres;Password=password;");
+                  optionsBuilder.UseNpgsql("Server=diagest.postgres.database.azure.com;Database=diagest_dev;Port=5432;User Id=diagest;Password=f!dasl3&sd89@2d!;Trust Server Certificate=True;");
               }
               
               protected override void OnModelCreating(ModelBuilder builder)
