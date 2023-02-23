@@ -2406,7 +2406,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet@6/6.0.111/libexec/sdk/6.0.111/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet@6/6.0.113/libexec/sdk/6.0.113/RuntimeIdentifierGraph.json"
       }
     }
   }
